@@ -4,8 +4,9 @@
 	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
+	--color-green-2: rgba(39, 150, 88);
+	--color-green-1: rgba(54, 207, 121);
+	--color-green-0: rgb(141, 224, 177);
 	--color-bg-2: hsl(224, 44%, 95%);
 	--color-theme-1: #ff3e00;
 	--color-theme-2: #4075a6;
@@ -19,15 +20,22 @@
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
-	background-image: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(255, 255, 255, 0.75) 0%,
-			rgba(255, 255, 255, 0) 100%
-		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgb(39, 150, 88);
+	background: linear-gradient(31deg, rgba(39, 150, 88, 0.15) 0%, rgba(54, 207, 121, 0.3) 10%, rgba(39, 150, 88, 0.1) 80%, rgba(39, 150, 88, 0.05) 100%);
+	z-index: -1;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 h1,
